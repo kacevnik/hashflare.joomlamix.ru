@@ -22,25 +22,25 @@
 							<a href="/"><img src="/img/logomini.png" style="width:30%;"></a>
 						</div>
 					</li>
-					<li class="active">
+					<li class="<?php if($page == 'index'){echo 'active';}else{ echo 'inactive';} ?>">
 						<a href="index.php">
 							<i class="fa fa-th-large"></i> 
 							<span class="nav-label">Личный Кабинет</span>
 						</a>
 					</li>
-					<li class="inactive">
-						<a href="">
+					<li class="<?php if($page == 'video'){echo 'active';}else{ echo 'inactive';} ?>">
+						<a href="index.php?page=video">
 						<i class="fa fa-video-camera"></i> 
 						<span class="nav-label">Видео история</span></a>
 					</li>
-					<li class="inactive">
-						<a href="">
+					<li class="<?php if($page == 'settings'){echo 'active';}else{ echo 'inactive';} ?>">
+						<a href="index.php?page=settings">
 							<i class="fa fa-cogs"></i> 
 							<span class="nav-label">Настройки</span>
 						</a>
 					</li>
-					<li class="inactive">
-						<a href="">
+					<li class="<?php if($page == 'back'){echo 'active';}else{ echo 'inactive';} ?>">
+						<a href="index.php?page=back">
 							<i class="fa fa-question"></i> 
 							<span class="nav-label">Обртная связь</span> 
 						</a>
