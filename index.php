@@ -1,57 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="HashFlare Cloud Mining">
-	<meta name="author" content="HashCoins">
-	<title>Панель | Панель управления HashFlare</title>
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png?v=5">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png?v=5">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png?v=5">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png?v=5">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png?v=5">
-	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png?v=5">
-	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png?v=5">
-	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png?v=5">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png?v=5">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png?v=5" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-194x194.png?v=5" sizes="194x194">
-	<link rel="icon" type="image/png" href="/favicon-96x96.png?v=5" sizes="96x96">
-	<link rel="icon" type="image/png" href="/android-chrome-192x192.png?v=5" sizes="192x192">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png?v=5" sizes="16x16">
-	<link rel="manifest" href="/manifest.json?v=5">
-	<link rel="shortcut icon" href="/favicon.ico?v=5">
-	<meta name="msapplication-TileColor" content="#1a1ee7">
-	<meta name="msapplication-TileImage" content="/mstile-144x144.png?v=5">
-	<meta name="theme-color" content="#1a1ee7">
-	<style>.flot-chart.small{height:172px;}</style>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/css/animate.min.css"/><link rel="stylesheet" type="text/css" href="/css/plugins/morris/morris-0.4.3.min.css"/><link rel="stylesheet" type="text/css" href="/css/plugins/gritter/jquery.gritter.css"/><link rel="stylesheet" type="text/css" href="/css/plugins/iCheck/custom.css"/><link rel="stylesheet" type="text/css" href="/css/plugins/nouislider/jquery.nouislider.css"/><link rel="stylesheet" type="text/css" href="/css/plugins/nouislider/jquery.nouislider.pips.min.css"/><link rel="stylesheet" type="text/css" href="/css/plugins/steps/jquery.steps.css"/><link rel="stylesheet" type="text/css" href="/css/styles.css?v=5.6.2"/>
-	<script>(function() {
-					var _fbq = window._fbq || (window._fbq = []);
-					if (!_fbq.loaded) {
-						var fbds = document.createElement('script');
-						fbds.async = true;
-						fbds.src = '//connect.facebook.net/en_US/fbds.js';
-						var s = document.getElementsByTagName('script')[0];
-						s.parentNode.insertBefore(fbds, s);
-						_fbq.loaded = true;
-					}
-					_fbq.push(['addPixelId', '580591432077608']);
-				})();
-				window._fbq = window._fbq || [];
-				window._fbq.push(['track', 'PixelInitialized', {}]);
-			</script>
-	 
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
+<?php require('template/temp.head.php'); ?>
 <body>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=580591432077608&amp;ev=PixelInitialized"/></noscript>
-<div id="wrapper">
+	<div id="wrapper">
 <nav class="navbar-default navbar-static-side" role="navigation">
 <div class="sidebar-collapse">
 <ul class="nav" id="side-menu">
