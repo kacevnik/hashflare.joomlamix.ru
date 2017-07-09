@@ -5035,17 +5035,6 @@ table.dataTable thead .sorting_asc:after {
     float: right;
     font-family: fontawesome
 }
-table.dataTable thead .sorting_desc:after {
-    content: "\f0dd";
-    float: right;
-    font-family: fontawesome
-}
-table.dataTable thead .sorting:after {
-    content: "\f0dc";
-    float: right;
-    font-family: fontawesome;
-    color: rgba(50, 50, 50, 0.5)
-}
 .dataTables_wrapper {
     padding-bottom: 30px
 }
@@ -8538,4 +8527,9 @@ body.body-small .vote-icon {
     font-weight: bold;
     color: #5db1f6;
     padding: 10px;
+}
+
+.foto_statistic a{
+    color: #000;
+    font-size: 16px;
 }

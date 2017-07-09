@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="HashFlare">
 		<meta name="author" content="Kacevnik">
-		<title>Панель | Эксперемент с HashFlare</title>
+		<title><?php echo $title; ?></title>
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
