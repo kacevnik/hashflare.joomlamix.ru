@@ -7,4 +7,14 @@
 	}else{
 		echo "<h1>Error Pages</h1>"; exit();
 	}
+
+/***
+*  Функция преобразования даты из UNIX метки в формат DD may YYYY
+*
+***/
+
+	function getDateOnUnix_1($unix){
+		$arr = array('янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек');
+		return date("d", $unix).' '.$arr[date("n", $unix)-1].' '.date("Y", $unix);
+	}
 ?>

@@ -13,7 +13,7 @@
 								<thead>
 									<tr role="row">
 										<th class="sorting" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">#</th>
-										<th class="sorting_desc" colspan="1" rowspan="1" style="width: 50px;" tabindex="0">Дата</th>
+										<th class="sorting_desc" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">Дата</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Баланс</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Последняя выплата</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Вычет системы</th>
@@ -34,19 +34,20 @@
 									$pribil_baks = $pribil * $item['kurs'];
 									$procent_plus = number_format($pribil_baks/($item['hash']*BUY_HASH/100), 1, '.', '').'%';
 									$days = number_format(100/$procent_plus*100/$pribil_baks, 0, '', ' ');
+									$url_img = '/img_data/'.date("dmY", $item['unix_date']).'.jpg';
 								?>
 									<tr class="odd" role="row">
 										<td><?php echo 'день #'.$i--; ?></td>
-										<td><?php echo $item['unix_date']; ?></td>
+										<td><?php echo getDateOnUnix_1($item['unix_date']); ?></td>
 										<td><?php echo $item['balans']. ' BTC'; ?></td>
 										<td><?php echo $item['kdv_add']. ' BTC'; ?></td>
 										<td><?php echo $item['minus']. ' BTC'; ?></td>
 										<td><?php echo number_format($procent, 1, '.', '').'%'; ?></td>
 										<td><?php echo $pribil. '-'.$procent_plus.'-'.number_format($pribil_baks, 3, '.', '').'$'; ?></td>
-										<td><?php echo $item['hash']; ?></td>
+										<td><?php echo $item['hash'].' TH/s'; ?></td>
 										<td><?php echo $item['bay_hash']; ?></td>
 										<td><?php echo $days; ?></td>
-										<td class="foto_statistic"><a href=""><i class="fa fa-camera"></i></a></td>
+										<td class="foto_statistic"><a href="<?php echo $url_img; ?>"><i class="fa fa-camera"></i></a></td>
 									</tr>									
 									<?php } ?>
 								</tbody>
