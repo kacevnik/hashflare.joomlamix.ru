@@ -35,6 +35,7 @@
 									$procent_plus = number_format($pribil_baks/($item['hash']*BUY_HASH/100), 1, '.', '').'%';
 									$days = number_format(100/$procent_plus*100/$pribil_baks, 0, '', ' ');
 									$url_img = '/img_data/'.date("dmY", $item['unix_date']).'.jpg';
+									$image_caption = 'Статистика за '.getDateOnUnix_1($item['unix_date']);
 								?>
 									<tr class="odd" role="row">
 										<td><?php echo 'день #'.$i--; ?></td>
@@ -47,7 +48,7 @@
 										<td><?php echo $item['hash'].' TH/s'; ?></td>
 										<td><?php echo $item['bay_hash']; ?></td>
 										<td><?php echo $days; ?></td>
-										<td class="foto_statistic"><a href="<?php echo $url_img; ?>"><i class="fa fa-camera"></i></a></td>
+										<td class="foto_statistic"><a href="<?php echo $url_img; ?>" data-fancybox="images" data-caption="<?php echo $image_caption; ?>"><i class="fa fa-camera"></i></a></td>
 									</tr>									
 									<?php } ?>
 								</tbody>

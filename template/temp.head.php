@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/css/style.css"/>
 		 
 		<!--[if lt IE 9]>
