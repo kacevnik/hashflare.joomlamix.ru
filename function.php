@@ -17,4 +17,36 @@
 		$arr = array('янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек');
 		return date("d", $unix).' '.$arr[date("n", $unix)-1].' '.date("Y", $unix);
 	}
+
+/***
+*  Функция получения всех данных по балансу
+*
+***/
+
+	function getMainStatistic(){
+		global $db;
+		$arr = array();
+		$sql = "SELECT * FROM kdv_balans ORDER BY id DESC";
+        $res = mysqli_query($db, $sql);
+        if(mysqli_num_rows($res)){
+            $myr = mysqli_fetch_assoc($res); 
+            do{
+               $arr[] = $myr; 
+            }
+            while($myr = mysqli_fetch_assoc($res));               
+        }
+        else{return false;}
+        return $arr;
+	}	
+
+/***
+*  Получение курсов Валют по API с сайта coindesk.com
+*
+***/
+
+	function getCurs($simvol='USD'){
+		$arr =  json_decode(file_get_contents('http://api.coindesk.com/v1/bpi/currentprice/'.$simvol.'.json'));
+		return $arr->bpi->$simvol->rate_float;
+	}
+
 ?>
