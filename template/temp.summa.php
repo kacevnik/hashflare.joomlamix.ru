@@ -98,7 +98,7 @@
 							</div>
 						</div>
 					</div>
-										<div class="row">
+					<div class="row">
 						<div class="col-xs-12">
 							<div class="ibox float-e-margins">
 								<div class="ibox-title">
@@ -117,3 +117,4 @@
 							</div>
 						</div>
 					</div>
+					<div id="container" style="width:100%; height:400px;"></div>

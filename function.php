@@ -49,4 +49,34 @@
 		return $arr->bpi->$simvol->rate_float;
 	}
 
+/***
+*  Функция получения данных для Графика.
+*
+***/
+
+	function jsonData($type){
+		global $db;
+		$string = '[';
+		$sql = "SELECT unix_date, kdv_add, minus, balans FROM kdv_balans ORDER BY id DESC";
+        $res = mysqli_query($db, $sql);
+        if(mysqli_num_rows($res)){
+            $myr = mysqli_fetch_assoc($res); 
+            do{
+            	if($type == 'balans'){
+            		$string = $string.'['.$myr["unix_date"].'000, '.$myr["balans"].'],'; 
+            	}
+            	if($type == 'max'){
+            		$string = $string.'['.$myr["unix_date"].'000, '.$myr["kdv_add"].'],';
+            	}
+            	if($type == 'min'){
+            		$string = $string.'['.$myr["unix_date"].'000, '.$myr["minus"].'],';
+            	}         
+            }
+            while($myr = mysqli_fetch_assoc($res)); 
+            $string = $string.'];';              
+        }
+        else{return false;}
+        return $string;
+	}	
+
 ?>

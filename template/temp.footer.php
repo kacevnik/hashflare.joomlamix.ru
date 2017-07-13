@@ -10,6 +10,8 @@
 	<script src="/js/jquery.js" type="text/javascript"></script> 
 	<script src="/js/bootstrap.min.js" type="text/javascript"></script> 
 	<script src="/js/jquery.fancybox.min.js" type="text/javascript"></script> 
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 	<script src="/js/script.js" type="text/javascript"></script> 
 	</body>
 </html>

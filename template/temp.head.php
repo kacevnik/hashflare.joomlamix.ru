@@ -13,6 +13,11 @@
 		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+		<script type="text/javascript">
+			var resultJsonBalans = <?php echo jsonData('balans'); ?>
+			var resultJsonMax = <?php echo jsonData('max'); ?>
+			var resultJsonMin = <?php echo jsonData('min'); ?>
+		</script>
 		 
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
