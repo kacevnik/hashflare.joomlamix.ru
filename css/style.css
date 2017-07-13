@@ -8539,3 +8539,16 @@ body.body-small .vote-icon {
     padding-right: 30px;
 }
 
+#container{
+    border-top: 1px solid #e7eaec;
+    display: none;
+}
+
+.show_chart{
+    margin: 0 0 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.show_chart:hover{
+    opacity: 0.7;
+}
