@@ -114,12 +114,14 @@ $(document).ready(function() {
             yAxis: [{
                 title: {
                     text: 'Баланс'
-                }
+                },
+                min: 0
             },{
                 title: {
                     text: 'Выплачено'
                 },
-                opposite: false
+                opposite: false,
+                min: 0
             }]
 
         });

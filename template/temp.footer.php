@@ -1,7 +1,7 @@
 			<div class="footer">
 				<div class="row">
 					<div class="col-md-5">
-						<strong>Copyright</strong> &copy; Все права защищены. 2017-2017
+						<strong>Copyright</strong> &copy; Все права защищены. 2017-<?php echo date("Y"); ?>
 					</div>
 				</div>
 			</div>

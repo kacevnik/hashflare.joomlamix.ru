@@ -8552,3 +8552,35 @@ body.body-small .vote-icon {
 .show_chart:hover{
     opacity: 0.7;
 }
+
+.add_settings_item{
+    width: 14%;
+    display: block;
+    float: left;
+    margin: 0 0 10px 0;
+}
+
+.add_settings_input{
+    margin: 0 0 12px 0;
+    border-radius: 4px;
+    border: 1px solid #b0b5ac;
+    width: 220px;
+    padding: 4px 6px;
+}
+
+.add_settings_textarea{
+    margin: 0 0 12px 0;
+    border-radius: 4px;
+    border: 1px solid #b0b5ac;
+    width: 220px;
+    padding: 4px 6px;
+}
+
+.add_settings_submit{
+    background-color: #5db1f6;
+    color: white;
+    border: 1px solid #5db1f6;
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-size: 14px;
+}
