@@ -1,5 +1,58 @@
 $(document).ready(function() {
 
+    function number_format(number, decimals, dec_point, thousands_sep) {
+      number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+      var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function(n, prec) {
+          var k = Math.pow(10, prec);
+          return '' + (Math.round(n * k) / k)
+            .toFixed(prec);
+        };
+      // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+      s = (prec ? toFixedFix(n, prec) : '' + Math.round(n))
+        .split('.');
+      if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+      }
+      if ((s[1] || '')
+        .length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1)
+          .join('0');
+      }
+      return s.join(dec);
+    }
+
+    $('.add_settings input[name="add"]').keyup(function(){
+        solution();
+    });    
+
+    $('.add_settings input[name="minus"]').keyup(function(){
+        solution();
+    });
+
+    $('.add_settings input[name="balans"]').val(SetObject.balans_yestoday);
+
+    function solution(){
+        $('.add_settings_input_proc').html('');
+        $('.add_settings input[name="balans"]').val(SetObject.balans_yestoday);
+        var add = $('.add_settings input[name="add"]').val();
+        var minus = $('.add_settings input[name="minus"]').val();
+        var balans = $('.add_settings input[name="balans"]').val();
+        console.log(add);
+        console.log(minus);
+        console.log(balans);
+
+        if(add && minus && minus/(add/100) != Infinity && add != 0 && minus != 0){
+            $('.add_settings_input_proc').html(number_format(minus/(add/100), 2, '.', '')+'%');
+            $('.add_settings input[name="balans"]').val(number_format((SetObject.balans_yestoday*1 + add*1 - minus*1), 8, '.', ''));
+        }
+    }
+
 	$().fancybox({
 		selector : '[data-fancybox="images"]'
 	});

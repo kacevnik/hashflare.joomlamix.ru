@@ -17,6 +17,7 @@
 			var resultJsonBalans = <?php echo jsonData('balans'); ?>
 			var resultJsonMax = <?php echo jsonData('max'); ?>
 			var resultJsonMin = <?php echo jsonData('min'); ?>
+			var SetObject = {kurs: <?php echo getCurs('USD'); ?>, balans_yestoday: <?php echo getMainStatistic()[0]["balans"]; ?>};
 		</script>
 		 
 		<!--[if lt IE 9]>

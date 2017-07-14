@@ -8,19 +8,19 @@
 				<div class="ibox-content">
 				<div class="add_settings">
 					<form method="post" action="">
-						<span class="add_settings_item">Выплачено</span>
+						<span class="add_settings_item">Выплачено*</span>
 						<input type="text" name="add" class="add_settings_input"><br>
-						<span class="add_settings_item">Процент системы</span>
-						<input type="text" name="minus" class="add_settings_input"><br>
+						<span class="add_settings_item">Процент системы*</span>
+						<input type="text" name="minus" class="add_settings_input"><span class="add_settings_input_proc"></span><br>
 						<span class="add_settings_item">Куплено хэшрейта</span>
-						<input type="text" name="hash" class="add_settings_input"><br>
-						<span class="add_settings_item">Баланс</span>
+						<input type="text" name="hash" value="0" class="add_settings_input"><br>
+						<span class="add_settings_item">Баланс*</span>
 						<input type="text" name="balans" class="add_settings_input"><br>
-						<span class="add_settings_item">Курс BTC</span>
-						<input type="text" name="kurs" class="add_settings_input"><br>
+						<span class="add_settings_item">Курс BTC*</span>
+						<input type="text" name="kurs" value="<?php echo number_format(getCurs('USD'), 2, '.', ''); ?>" class="add_settings_input"><br>
 						<span class="add_settings_item">Комментарий</span>
 						<textarea class="add_settings_textarea" name="comment"></textarea><br>
-						<span class="add_settings_item">Проверочный код</span>
+						<span class="add_settings_item">Проверочный код*</span>
 						<input type="password" name="kod" class="add_settings_input"><br>
 						<input type="submit" name="submit" class="add_settings_submit">
 					</form>

@@ -10,3 +10,4 @@
 						<li class="right_top_cel">Цель: 100$/день</li>
 					</ul>
 				</nav>
+				<?php echo $_SESSION['error']; unset($_SESSION['error']); ?>

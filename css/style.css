@@ -8584,3 +8584,31 @@ body.body-small .vote-icon {
     padding: 6px 8px;
     font-size: 14px;
 }
+
+.add_settings_input_proc{
+    margin: 0 0 0 10px;
+}
+
+.error_message{
+    text-align: center;
+    margin: 20px 20px;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 16px;
+    background: rgba(204, 6, 8, 0.41);
+    border: 3px solid #cc0c0c;
+    border-left: none;
+    border-right: none;
+}
+
+.error_message_plus{
+    text-align: center;
+    margin: 20px 20px;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 16px;
+    background: rgba(5, 169, 58, 0.54);
+    border: 3px solid #149024;
+    border-left: none;
+    border-right: none;
+}
