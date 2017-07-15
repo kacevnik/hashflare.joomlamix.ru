@@ -22,6 +22,7 @@
 						<textarea class="add_settings_textarea" name="comment"></textarea><br>
 						<span class="add_settings_item">Проверочный код*</span>
 						<input type="password" name="kod" class="add_settings_input"><br>
+						<div class="g-recaptcha" data-sitekey="6LetBSkUAAAAAClLu2dRVSSjQYQdX1rQEVOa0Hs_"></div><br>
 						<input type="submit" name="submit" class="add_settings_submit">
 					</form>
 				</div>

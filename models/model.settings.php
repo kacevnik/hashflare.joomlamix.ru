@@ -3,10 +3,10 @@
 	if(ENTER != 1){echo "<h1>UPS! No enter</h1>"; exit();}
 //------------------------------------------------------------------------
 
-	function addData($add, $minus, $hash=0, $bay_hash, $balans, $comment='', $kod, $kurs){
+	function addData($add, $minus, $hash_bay, $balans, $comment='', $kod, $kurs){
 		global $db;
-		$bay_hash = $hash + $bay_hash;
-		$sql = "INSERT INTO kdv_balans (unix_date, kdv_add, minus, balans, hash, bay_hash, kurs, comment) VALUES ('".TIMES."', '$add', '$minus', '$balans', '$hash', '$bay_hash', '$kurs', '$comment')";
+		$hash = getMainStatistic()[0]["hash"] + getMainStatistic()[0]["bay_hash"];
+		$sql = "INSERT INTO kdv_balans (unix_date, kdv_add, minus, balans, hash, bay_hash, kurs, comment) VALUES ('".TIMES."', '$add', '$minus', '$balans', '$hash', '$hash_bay', '$kurs', '$comment')";
 		if(mysqli_query($db, $sql)){
 			return true;
 		}else{
@@ -23,19 +23,30 @@
 		if($_POST['comment']) {$comment = $_POST['comment']; $comment = htmlspecialchars(trim($comment));}
 		if($_POST['kod'])     {$kod     = $_POST['kod'];     $kod     = htmlspecialchars(trim($kod));}
 
+		$capcha = $_POST['g-recaptcha-response'];
+
+	    $url_result = CAPCHA_URL . '?secret=' . SECRET . '&response='.$capcha.'&remoteip='.IP_USER;
+	    $back_capcha = json_decode(file_get_contents($url_result));
+
+        if($back_capcha->success == false){
+            $_SESSION['error'] = '<div class="error_message">Подтвердите, что Вы не робот!</div>';
+            header("Location: index.php?page=settings");
+            exit(); 
+        }
+
 		if(!$add || !$minus || !$balans || !$kurs || !$kod){
 			$_SESSION['error'] = '<div class="error_message">Заполните все поля!</div>';
 			header("Location: index.php?page=settings");
 			exit();
 		}
 
-		if($kod != date("H").'9564'){
+		if($kod != date("H").'9564665'){
 			$_SESSION['error'] = '<div class="error_message">Код подтверждения неверный!</div>';
 			header("Location: index.php?page=settings");
 			exit();
 		}
 
-		if(addData($add, $minus, $hash, getMainStatistic()[0]["hash"], $balans, $comment, $kod, $kurs)){
+		if(addData($add, $minus, $hash, $balans, $comment, $kod, $kurs)){
 			$_SESSION['error'] = '<div class="error_message_plus">Данные добавлены!</div>';
 			header("Location: index.php?page=settings");
 			exit();

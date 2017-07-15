@@ -32,7 +32,7 @@
 									$procent = $item['minus'] / ($item['kdv_add']/100);
 									$pribil = number_format($item['kdv_add'] - $item['minus'], 8, '.', '');
 									$pribil_baks = $pribil * $item['kurs'];
-									$procent_plus = number_format($pribil_baks/((INVEST+REINVEST)/100), 1, '.', '').'%';
+									$procent_plus = number_format($pribil_baks/($item['hash']*BUY_HASH/100), 1, '.', '').'%';
 									$days = number_format(100/$procent_plus*100/$pribil_baks, 0, '', ' ');
 									$url_img = '/img_data/'.date("dmY", $item['unix_date']).'.jpg';
 									$image_caption = 'Статистика за '.getDateOnUnix_1($item['unix_date']);
@@ -40,9 +40,9 @@
 									<tr class="odd" role="row">
 										<td><?php echo 'день #'.$i--; ?></td>
 										<td><?php echo getDateOnUnix_1($item['unix_date']); ?></td>
-										<td><?php echo $item['balans']. ' BTC'; ?></td>
-										<td><?php echo $item['kdv_add']. ' BTC'; ?></td>
-										<td><?php echo $item['minus']. ' BTC'; ?></td>
+										<td><?php echo number_format($item['balans'], 8, '.', ''). ' BTC'; ?></td>
+										<td><?php echo number_format($item['kdv_add'], 8, '.', ''). ' BTC'; ?></td>
+										<td><?php echo number_format($item['minus'], 8, '.', ''). ' BTC'; ?></td>
 										<td><?php echo number_format($procent, 1, '.', '').'%'; ?></td>
 										<td><?php echo $pribil. '-'.$procent_plus.'-'.number_format($pribil_baks, 3, '.', '').'$'; ?></td>
 										<td><?php echo $item['hash'].' TH/s'; ?></td>
