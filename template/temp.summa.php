@@ -25,7 +25,7 @@
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#5A93c4;cursor:default;"></span>
 													</div>
-													<h2 class="m-l-md m-b-none" style="font-weight:400;"><?php echo $info[0]['balans']; ?> BTC</h2><small class="m-l-md">Баланс</small>
+													<h2 class="m-l-md m-b-none" style="font-weight:400;"><?php echo number_format($info[0]['balans'], 8, '.', ''); ?> BTC</h2><small class="m-l-md">Баланс</small>
 												</li>
 												<li>
 													<hr>
@@ -34,13 +34,13 @@
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#c2dfe9;cursor:default;"></span>
 													</div>
-													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo $info[0]['kdv_add']; ?> BTC</h3><small class="m-l-md">Последняя SHA-256 Выплата</small>
+													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo number_format($info[0]['kdv_add'], 8, '.', ''); ?> BTC</h3><small class="m-l-md">Последняя SHA-256 Выплата</small>
 												</li>
 												<li>
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#c2dfe9;cursor:default;"></span>
 													</div>
-													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo $info[1]['kdv_add']; ?> BTC</h3><small class="m-l-md">SHA-256 Выплата вчера</small>
+													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo number_format($info[1]['kdv_add'], 8, '.', ''); ?> BTC</h3><small class="m-l-md">SHA-256 Выплата вчера</small>
 												</li>
 											</ul>
 										</div>
@@ -84,7 +84,25 @@
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#c2dfe9;cursor:default;"></span>
 													</div>
-													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo number_format(getCurs($simvol='USD'), 2, '.', ' ').'$'; ?></h3><small class="m-l-md">Курс BTC</small>
+													<h3 class="m-l-md m-b-none" style="font-weight:400; position: relative;">
+														<span class="btc_chenge">
+															<?php echo number_format(getCurs($simvol='USD'), 2, '.', ' '); ?>
+																
+														</span>
+														<ul class="btc_change_select" data="hide">
+															<li class="click_chenge_sec">
+																<img src="/img/flag_ico/USD.png">
+															</li>
+														</ul>		
+														<i class="fa fa-caret-down"></i>
+														
+														<ul class="btc_change_list">
+															<li class="click_chenge_sec"><img src="/img/flag_ico/RUB.png"></li>
+															<li class="click_chenge_sec"><img src="/img/flag_ico/EUR.png"></li>
+															<li class="click_chenge_sec"><img src="/img/flag_ico/GBP.png"></li>
+															<li class="click_chenge_sec"><img src="/img/flag_ico/UAH.png"></li>
+														</ul>
+													</h3><small class="m-l-md">Курс BTC</small>
 												</li>
 												<li>
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">

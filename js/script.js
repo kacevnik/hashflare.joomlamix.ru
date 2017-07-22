@@ -1,5 +1,33 @@
 $(document).ready(function() {
 
+    $('.click_chenge_sec').click(function(){
+        var flag = $('.btc_change_select li').detach();
+        flag.appendTo('.btc_change_list');         
+
+        var flag = $(this).detach();
+        flag.appendTo('.btc_change_select');  
+  
+        $('.btc_change_select').next('i').remove();
+        if($('.btc_change_select').attr('data') == 'hide'){
+            $('.btc_change_select').attr('data', 'show');
+            $('.btc_change_select').after('<i class="fa fa-caret-up"></i>');
+            $('.btc_change_list').css({'left': $(this).position().left + 'px', 'display': 'inline-block'});
+        }else{
+            var curs = getCurs($(this).find('img').attr('src').split('/')[$(this).find('img').attr('src').split('/').length-1].split('.')[0]);
+            $('.btc_change_select').attr('data', 'hide');
+            $('.btc_change_select').after('<i class="fa fa-caret-down"></i>');
+            $('.btc_change_list').css({'display': 'none'});
+        }  
+
+    });
+
+    function getCurs(naminal){
+        $.post( "../json/get_curs.php", {naminal: naminal}, function(data){
+            var result = JSON.parse(data);
+            $('.btc_chenge').html(number_format(result.curs, 2, '.', ' '));     
+        });
+    }
+
     function number_format(number, decimals, dec_point, thousands_sep) {
       number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
       var n = !isFinite(+number) ? 0 : +number,
