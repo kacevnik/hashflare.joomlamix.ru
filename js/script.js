@@ -28,6 +28,54 @@ $(document).ready(function() {
         });
     }
 
+    $('input[name=submit_1]').click(function(){
+        var a = $('input[name=help_1_invest]').val();
+        var b = $('input[name=help_1_days]').val();
+        var c = $('input[name=help_1_proc]').val();
+        if(a && b && c){
+            $('.help_result_1 .table-responsive').remove();
+            $.post( "../json/help_1.php", {sum: a, days: b, proc: c}, function(data){
+                var result = JSON.parse(data);
+                console.log(result);
+                var i = 0;
+                var show = '';
+                show += '<div class="table-responsive">';
+                show += '<div><i>';
+                show += 'Курс: ' + number_format(result.curs, 2, '.', ' ') + '$/BTC';
+                show += '   Сложность: ' + result.sour.difficulty;
+                show += '   Инвестированно: ' + result.sum + '$';
+                show += '</i></div>';
+                show += '<div class="dataTables_wrapper form-inline" id="DataTables_Table_0_wrapper">';
+                show += '<div class="clear"></div>';
+                show += '<table class="table table-striped table-bordered table-hover dataTable" style="font-size: 12px;">';
+                show += '<thead>';
+                show += '<tr role="row">';
+                show += '<th class="sorting" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">#День</th>';
+                show += '<th class="sorting" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">Профит BTC/день</th>';
+                show += '<th class="sorting_desc" colspan="1" rowspan="1" style="width: 80px;" tabindex="0">Профит USD/день</th>';
+                show += '<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Баланс</th>';
+                show += '<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Реинвестировано сегодня</th>';
+                show += '<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Реинвестировано всего</th>';
+                show += '</tr>';
+                show += '</thead><tbody>';
+                console.log(result.data);
+                for(var key in result.data){
+                    i++;
+                    show += '<tr>';
+                    show += '<td>день# '+ i +'</td>';
+                    show += '<td>'+ result.data[key]['profit_per_day_btc'] +'BTC</td>';
+                    show += '<td>'+ result.data[key]['profit_per_day_usd'] +'$</td>';
+                    show += '<td>'+ result.data[key]['profit'] +'$</td>';
+                    show += '<td>'+ result.data[key]['reinvest'] +'$</td>';
+                    show += '<td>'+ result.data[key]['total_reinvest'] +'$</td>';
+                    show += '</tr>';
+                }
+                show += '</tbody></table>';                  
+                $('.help_result_1').append(show);             
+            });
+        }
+    });
+
     function number_format(number, decimals, dec_point, thousands_sep) {
       number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
       var n = !isFinite(+number) ? 0 : +number,

@@ -5,8 +5,14 @@
 				<div class="ibox-title">
 					<h5>Видео история</h5>
 				</div>
-				<div class="ibox-content">
+				<div class="ibox-content" style="overflow: hidden;">
 					<div class="video_row">
+						<div class="col-md-4 col-lg-2 col-sm-12">
+							<a data-fancybox href="https://www.youtube.com/watch?v=L6pJ_10QMmI&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
+      							<img src="//img.youtube.com/vi/L6pJ_10QMmI/mqdefault.jpg" width="100%">
+    						</a>
+    						<div class="video_title">HashTest #3. Что лучше, облачный майнинг или майнинг на Asic?</div>
+						</div>
 						<div class="col-md-4 col-lg-2 col-sm-12">
 							<a data-fancybox href="https://www.youtube.com/watch?v=H67zSqH7fYY&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
       							<img src="//img.youtube.com/vi/H67zSqH7fYY/mqdefault.jpg" width="100%">
@@ -18,9 +24,6 @@
       							<img src="//img.youtube.com/vi/MDMcWPBd38Y/mqdefault.jpg" width="100%">
     						</a>
     						<div class="video_title">HashTest #1. 100$ в день на HashFlare.</div>
-						</div>
-						<div class="col-md-4 col-lg-2 col-sm-12">
-							
 						</div>
 						<div class="col-md-4 col-lg-2 col-sm-12">
 							

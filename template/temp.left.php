@@ -38,6 +38,12 @@
 							<i class="fa fa-cogs"></i> 
 							<span class="nav-label">Настройки</span>
 						</a>
+					</li>					
+					<li class="<?php if($page == 'help'){echo 'active';}else{ echo 'inactive';} ?>">
+						<a href="index.php?page=help">
+							<i class="fa fa-calculator"></i> 
+							<span class="nav-label">Помощь</span>
+						</a>
 					</li>
 					<li class="<?php if($page == 'back'){echo 'active';}else{ echo 'inactive';} ?>">
 						<a href="index.php?page=back">
