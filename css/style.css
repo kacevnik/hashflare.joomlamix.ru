@@ -8644,6 +8644,11 @@ body.body-small .vote-icon {
     display: none;
 }
 
+#container_chart{
+    border-top: 1px solid #e7eaec;
+    display: none;
+}
+
 .btc_change_list li{
     margin: 0;
     cursor: pointer;

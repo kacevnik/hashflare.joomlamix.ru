@@ -13,10 +13,14 @@
 						<div class="col-xs-12">
 							<div class="ibox float-e-margins">
 								<div class="ibox-title">
-									<h5>Информация по аккаунту<span class="show_chart" data="hide"><i class="fa fa-bar-chart"></i></span></h5>
+									<h5>Информация по аккаунту
+										<span class="show_chart" data="hide" to="container"><i class="fa fa-bar-chart"></i></span>
+										<span class="show_chart" data="hide"" to="container_chart"><i class="fa fa-area-chart"></i></span>
+									</h5>
 									<a class="btn btn-primary btn-xs m-l-sm pull-right" target="_blank" href="https://hashflare.io/r/B4573CB5">Регистрация на hashflare</a> 
 								</div>
 							<div id="container" style="width:100%; height:400px;"></div>
+							<div id="container_chart" style="width:100%; height:400px;"></div>
 								<div class="ibox-content">
 									<div class="row">
 										<div class="col-xs-12 col-md-4">

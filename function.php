@@ -61,6 +61,8 @@
         $res = mysqli_query($db, $sql);
         if(mysqli_num_rows($res)){
             $myr = mysqli_fetch_assoc($res); 
+            $i    = 0;
+            $proc = 0;
             do{
             	if($type == 'balans'){
             		$string = $string.$myr["balans"].', '; 
@@ -68,9 +70,17 @@
             	if($type == 'max'){
             		$string = $string.$myr["kdv_add"].', ';
             	}
-            	if($type == 'min'){
-            		$string = $string.$myr["minus"].', ';
-            	}         
+                if($type == 'min'){
+                    $string = $string.$myr["minus"].', ';
+                }             	
+                if($type == 'm_proc'){
+                    $string = $string.number_format($myr["minus"] / ($myr["kdv_add"]/100), 1, '.', '') . ', ';
+                }                
+                if($type == 'proc'){
+                    $i++;
+                    $proc+= number_format($myr["minus"] / ($myr["kdv_add"]/100), 1, '.', '');
+            		$string = $string.number_format($proc/$i, 1, '.', '') . ', ';
+            	}        
             }
             while($myr = mysqli_fetch_assoc($res)); 
             $string = $string.'];';              

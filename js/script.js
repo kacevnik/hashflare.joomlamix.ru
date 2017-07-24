@@ -135,11 +135,13 @@ $(document).ready(function() {
 
     $('.show_chart').click(function(){
         if($(this).attr('data') == 'hide'){
-            $('#container').slideDown(300);
+            $('#' + $('[data=show]').attr('to')).slideUp(300);
+            $('[data=show]').attr('data', 'hide');
+            $('#' + $(this).attr('to')).slideDown(300);
             showCart();
             $(this).attr('data', 'show');
         }else{
-            $('#container').slideUp(300);
+            $('#' + $(this).attr('to')).slideUp(300);
             $(this).attr('data', 'hide');
         }
     });
@@ -254,7 +256,77 @@ $(document).ready(function() {
             }]
 
         });
+
+////======================================================
+var series_charts_2 = [
+            {
+                name: 'Процент системы',
+                data: resultJsonMProc,
+                threshold: null,
+                color: 'rgba(0, 0, 0, 0.71)',
+                pointStart: 1499212800000,
+                pointInterval: 86400000,
+                tooltip: {
+                    valueSuffix: ' %'
+                }
+            }, 
+            {
+                name: 'Средний процент системы',
+                data: resultJsonProc,
+                threshold: null,
+                color: 'rgba(82, 156, 217, 1)',
+                pointStart: 1499212800000,
+                pointInterval: 86400000,
+                tooltip: {
+                    valueSuffix: ' %'
+                }
+            }];
+
+        // Create the chart
+        Highcharts.stockChart('container_chart', {
+        rangeSelector: {
+            buttons: [{
+                count: 1,
+                type: 'week',
+                text: '1нед'
+            }, {
+                count: 1,
+                type: 'month',
+                text: '1мес'
+            },{
+                count: 3,
+                type: 'month',
+                text: '3мес'
+            }, {
+                count: 6,
+                type: 'month',
+                text: '6мес'
+            }, {
+                count: 1,
+                type: 'ytd',
+                text: 'Год'
+            }, {
+                type: 'all',
+                text: 'Все'
+            }],
+            inputEnabled: false,
+            selected: 1
+        },      
+
+        title: {
+                text: 'Процент системы - Средний процент'
+            },
+
+            series: series_charts_2,
+
+            yAxis: [{
+                title: {
+                    text: 'Процент'
+                },
+                min: 0
+            }]
+
+        });
     }
-
-
+    
 });
