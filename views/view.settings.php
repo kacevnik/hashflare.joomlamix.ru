@@ -1,4 +1,5 @@
 <?php if(ENTER != 1){echo "<h1>UPS! No enter</h1>"; exit();} ?>
+
 	<div class="row animated fadeInRight">
 		<div class="col-lg-12">
 			<div class="ibox float-e-margins">

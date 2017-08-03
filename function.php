@@ -74,12 +74,22 @@
                     $string = $string.$myr["minus"].', ';
                 }             	
                 if($type == 'm_proc'){
-                    $string = $string.number_format($myr["minus"] / ($myr["kdv_add"]/100), 1, '.', '') . ', ';
+                    if($myr["minus"] == 0 || $myr["kdv_add"] == 0){
+                        $str_arr = explode(',', $string);
+                        $string  = $string . trim($str_arr[count($str_arr) - 2]) . ', ';
+                    }else{
+                        $string  = $string.number_format($myr["minus"] / ($myr["kdv_add"]/100), 1, '.', '') . ', ';
+                    }
                 }                
                 if($type == 'proc'){
                     $i++;
-                    $proc+= number_format($myr["minus"] / ($myr["kdv_add"]/100), 1, '.', '');
-            		$string = $string.number_format($proc/$i, 1, '.', '') . ', ';
+                    if($myr["minus"] == 0 || $myr["kdv_add"] == 0){
+                        $str_arr = explode(',', $string);
+                        $proc += trim($str_arr[count($str_arr) - 2]);
+                      }else{
+                        $proc += number_format($myr["minus"] / ($myr["kdv_add"]/100), 1, '.', '');
+                    }
+                    $string = $string . number_format($proc/$i, 1, '.', '') . ', ';
             	}        
             }
             while($myr = mysqli_fetch_assoc($res)); 

@@ -9,7 +9,7 @@
 				<div class="add_settings" style="margin: 0 0 30px 0;">
 					<form method="post" action="" onsubmit="return false;">
 						<span class="add_settings_item">Инвестированно* </span>
-						<input type="text" name="help_1_invest" class="add_settings_input" value="<?php echo INVEST; ?>"> $<br>
+						<input type="text" name="help_1_invest" class="add_settings_input" value="<?php echo INVEST + REINVEST; ?>"> $<br>
 						<span class="add_settings_item">Расчитать на:* </span>
 						<input type="text" name="help_1_days" class="add_settings_input" value="365"> дней<br>				<span class="add_settings_item">Средний процент системы:* </span>
 						<input type="text" name="help_1_proc" class="add_settings_input" value="<?php echo $m_proc; ?>"> %<br>

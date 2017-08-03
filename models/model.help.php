@@ -20,4 +20,41 @@
 //------------------------------------------------------------------------
 	$title = "Помощь настоящему майнеру | Эксперемент с HashFlare";
 
+	$x = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+	function check($array){
+		foreach ($array as $key => $value) {
+			$result[$value] = $result;
+			if (count($result) > 1)
+			array_shift($result);
+		}
+
+		echo '<pre>';
+		print_r($result);
+		echo '</pre>';
+	}
+
+	//check($x);
+
+$data1 = [
+    'parent.child.field' => 1,
+    'parent.child.field2' => 2,
+    'parent2.child.name' => 'test',
+    'parent2.child2.name' => 'test',
+    'parent2.child2.position' => 10,
+    'parent3.child3.position' => 10,
+];
+
+function parsArray($array){
+	$data = [];
+	foreach($array as $key => $val) {
+		$cursor = &$data;
+		foreach(explode('.', $key) as $idx) { 
+			$cursor = &$cursor[$idx]; 
+		}
+		$cursor = $val;
+	}
+	return $data;
+}
+
 ?>

@@ -133,7 +133,7 @@
 											Кошелек BTC
 										</div>										
 										<div class="col-xs-12 col-md-6" style="text-align: right;">
-											1JEN6bVWgWe4dbmpRJn5PfTUVgwWdjnWDC
+											1ABHsinEBP1p8urodMPdVLr8m7ZLjTMn9e
 										</div>
 									</div>
 								</div>

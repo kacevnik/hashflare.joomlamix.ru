@@ -29,11 +29,18 @@
 								<?php
 									$i = count($show_statistic);
 									foreach($show_statistic as $item){ 
-									$procent = $item['minus'] / ($item['kdv_add']/100);
-									$pribil = number_format($item['kdv_add'] - $item['minus'], 8, '.', '');
-									$pribil_baks = $pribil * $item['kurs'];
-									$procent_plus = number_format($pribil_baks/($item['hash']*BUY_HASH/100), 1, '.', '').'%';
-									$days = number_format(100/$procent_plus*100/$pribil_baks, 0, '', ' ');
+									if($item['kdv_add'] == 0 || $item['minus'] == 0){
+										$pribil       = 0;
+										$pribil_baks  = 0;
+										$procent_plus = 0;
+										$days =  '--||--';
+									}else{
+										$procent = $item['minus'] / ($item['kdv_add']/100);
+										$pribil = number_format($item['kdv_add'] - $item['minus'], 8, '.', '');
+										$pribil_baks = $pribil * $item['kurs'];
+										$procent_plus = number_format($pribil_baks/($item['hash']*BUY_HASH/100), 1, '.', '').'%';
+										$days = number_format(100/$procent_plus*100/$pribil_baks, 0, '', ' ');
+									}
 									$url_img = '/img_data/'.date("dmY", $item['unix_date']).'.jpg';
 									$image_caption = 'Статистика за '.getDateOnUnix_1($item['unix_date']);
 								?>
