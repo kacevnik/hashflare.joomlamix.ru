@@ -3,7 +3,7 @@
 			<div class="row border-bottom">
 				<nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
 					<div class="navbar-header">
-						<a class="navbar-minimalize minimalize btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+						<a class="navbar-minimalize minimalize btn btn-primary" href="#" data="show"><i class="fa fa-bars"></i></a>
 					</div>
 					<ul class="nav navbar-top-links navbar-right">
 						<li class="right_top_promo_kod">Промо код на скидку 10%: <b>B4573CB5</b></li>

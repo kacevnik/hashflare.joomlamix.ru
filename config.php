@@ -14,13 +14,16 @@
     define(ENTER, '1');
     define(URLKA, $_SERVER['HTTP_REFERER']);
     define(BUY_HASH, 120);
-    define(INVEST, 56.4);
-    define(REINVEST, 1.2);
+    define(INVEST, 240);
+    define(REINVEST, 12);
     define(IP_USER, $_SERVER['REMOTE_ADDR']);
     define(CAPCHA_URL, 'https://www.google.com/recaptcha/api/siteverify');
     define(SECRET, '6LetBSkUAAAAAJJxR4GfARBLjUWmDVyfKwaOn7TQ');
 
-    
+    $data_invest = array(
+        'invest'   => array(1 => 240),
+        'reinvest' => array(1 => 12 )
+    );
     //Соединение с базой данных.
     
     $db = mysqli_connect(HOST,ADMIN_DB,PASS_DB);

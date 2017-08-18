@@ -18,7 +18,7 @@
 										<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Последняя выплата</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 110px;" tabindex="0">Вычет системы</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 35px;" tabindex="0">Вычет системы (%)</th>
-										<th class="sorting" colspan="1" rowspan="1" style="width: 145px;" tabindex="0">Прибыль</th>
+										<th class="sorting" colspan="1" rowspan="1" style="width: 145px;" tabindex="0">Прибыль<br>Реинвестирование<br>Вывод</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 30px;" tabindex="0">Хэшрейт</th>										
 										<th class="sorting" colspan="1" rowspan="1" style="width: 30px;" tabindex="0">Куплено хэшрейт</th>
 										<th class="sorting" colspan="1" rowspan="1" style="width: 70px;" tabindex="0">Осталось дней</th>
@@ -43,6 +43,12 @@
 									}
 									$url_img = '/img_data/'.date("dmY", $item['unix_date']).'.jpg';
 									$image_caption = 'Статистика за '.getDateOnUnix_1($item['unix_date']);
+									if($item['refinans'] > 0){
+										$refinans = '<br>'. $item['refinans'] . ' BTC <i class="fa fa-refresh" ></i>';
+									}									
+									if($item['out_cash'] > 0){
+										$out_cash = '<br>'. $item['out_cash'] . ' BTC <i class="fa fa-money"></i>';
+									}
 								?>
 									<tr class="odd" role="row">
 										<td><?php echo 'день #'.$i--; ?></td>
@@ -51,7 +57,8 @@
 										<td><?php echo number_format($item['kdv_add'], 8, '.', ''). ' BTC'; ?></td>
 										<td><?php echo number_format($item['minus'], 8, '.', ''). ' BTC'; ?></td>
 										<td><?php echo number_format($procent, 1, '.', '').'%'; ?></td>
-										<td><?php echo $pribil. '-'.$procent_plus.'-'.number_format($pribil_baks, 3, '.', '').'$'; ?></td>
+										<td><?php echo $pribil. '-'.$procent_plus.'-'.number_format($pribil_baks, 3, '.', '').'$' . $refinans . $out_cash; $refinans = ''; $out_cash = '';?>
+										</td>
 										<td><?php echo $item['hash'].' TH/s'; ?></td>
 										<td><?php echo $item['bay_hash']; ?></td>
 										<td><?php echo $days; ?></td>

@@ -21,6 +21,59 @@ $(document).ready(function() {
 
     });
 
+    $('.minimalize').click(function(){
+        if($(this).attr('data') == 'show'){
+            $('.m-b-xl').find('img').stop().animate({
+                width: '30%'
+            }, 300);
+            setTimeout(function(){
+                $('.m-b-xl').find('img').attr('src', '/img/logomini.png');
+            }, 300);
+            $('.navbar-static-side').stop().animate({
+                width: '65px'
+            }, 300);            
+            $('.nav-header').stop().animate({
+                padding: '20px 0 0 0'
+            }, 300);            
+            $('#page-wrapper').stop().animate({
+                margin: '0 0 0 65px'
+            }, 300);
+            $('.nav-label').hide(300);
+            $('.hyphenate').hide(300);
+            $('.img-circle').hide(300);
+            $(this).attr('data', 'hide');
+        }else{
+            $('.m-b-xl').find('img').attr('src', '/img/logo.png');
+            $('.m-b-xl').find('img').stop().animate({
+                width: '100%'
+            }, 300);
+            $('.navbar-static-side').stop().animate({
+                width: '220px'
+            }, 300);            
+            $('.nav-header').stop().animate({
+                padding: '33px 25px'
+            }, 300);            
+            $('#page-wrapper').stop().animate({
+                margin: '0 0 0 220px'
+            }, 300);
+            $('.nav-label').show().css({'opacity': '0'});
+            $('.hyphenate').show().css({'opacity': '0'});
+            $('.img-circle').show().css({'opacity': '0'});
+            setTimeout(function(){
+                $('.nav-label').animate({
+                    opacity: 1
+                }, 300);            
+                $('.hyphenate').animate({
+                    opacity: 1
+                }, 300);            
+                $('.img-circle').animate({
+                    opacity: 1
+                }, 300);
+            }, 300);
+            $(this).attr('data', 'show');
+        }
+    });
+
     function getCurs(naminal){
         $.post( "../json/get_curs.php", {naminal: naminal}, function(data){
             var result = JSON.parse(data);
@@ -214,6 +267,10 @@ $(document).ready(function() {
                 count: 1,
                 type: 'month',
                 text: '1мес'
+            }, {
+                count: 3,
+                type: 'month',
+                text: '3мес'                
             }, {
                 count: 6,
                 type: 'month',

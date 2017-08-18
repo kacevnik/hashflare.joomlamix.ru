@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+	.video_title {
+	    font-size: 18px;
+	}
+}

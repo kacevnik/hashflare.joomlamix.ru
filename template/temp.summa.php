@@ -54,7 +54,7 @@
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#5A93c4;cursor:default;"></span>
 													</div>
-													<h2 class="m-l-md m-b-none" style="font-weight:400;"><?php echo INVEST+REINVEST.' $'; ?></h2><small class="m-l-md">Инвестировано всего</small>
+													<h2 class="m-l-md m-b-none" style="font-weight:400;"><?php echo $data_invest['invest'][1]+$data_invest['reinvest'][1].' $'; ?></h2><small class="m-l-md">Инвестировано всего</small>
 												</li>
 												<li>
 													<hr>
@@ -63,13 +63,13 @@
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#c2dfe9;cursor:default;"></span>
 													</div>
-													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo REINVEST.' $'; ?></h3><small class="m-l-md">Реинвестировано</small>
+													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo $data_invest['reinvest'][1].' $'; ?></h3><small class="m-l-md">Реинвестировано</small>
 												</li>
 												<li>
 													<div class="m-t-n-sm" style="position:absolute;top:50%;">
 														<span class="btn btn-xs p-xxs" style="background-color:#c2dfe9;cursor:default;"></span>
 													</div>
-													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo INVEST.' $'; ?></h3><small class="m-l-md">Инвестировано</small>
+													<h3 class="m-l-md m-b-none" style="font-weight:400;"><?php echo $data_invest['invest'][1].' $'; ?></h3><small class="m-l-md">Инвестировано</small>
 												</li>
 											</ul>
 										</div>
@@ -133,7 +133,7 @@
 											Кошелек BTC
 										</div>										
 										<div class="col-xs-12 col-md-6" style="text-align: right;">
-											1ABHsinEBP1p8urodMPdVLr8m7ZLjTMn9e
+											1duLcKJ2VJEnbBNcPRhaN2UJQ5FJkDHkN
 										</div>
 									</div>
 								</div>

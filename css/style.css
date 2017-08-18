@@ -8616,6 +8616,7 @@ body.body-small .vote-icon {
 .video_title{
     text-align: center;
     padding: 10px 5px;
+    margin: 0 0 15px 0;
 }
 
 .btc_change_select{

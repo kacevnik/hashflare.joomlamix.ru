@@ -13,8 +13,12 @@
 						<input type="text" name="add" class="add_settings_input"><br>
 						<span class="add_settings_item">Процент системы*</span>
 						<input type="text" name="minus" class="add_settings_input"><span class="add_settings_input_proc"></span><br>
+						<span class="add_settings_item">Реинвестированно</span>
+						<input type="text" name="reinvest" value="0" class="add_settings_input"><br>						
 						<span class="add_settings_item">Куплено хэшрейта</span>
-						<input type="text" name="hash" value="0" class="add_settings_input"><br>
+						<input type="text" name="hash" value="0" class="add_settings_input"><br>						
+						<span class="add_settings_item">Вывод</span>
+						<input type="text" name="out_cash" value="0" class="add_settings_input"><br>
 						<span class="add_settings_item">Баланс*</span>
 						<input type="text" name="balans" class="add_settings_input"><br>
 						<span class="add_settings_item">Курс BTC*</span>
