@@ -44,10 +44,16 @@
 							<i class="fa fa-calculator"></i> 
 							<span class="nav-label">Помощь</span>
 						</a>
+					</li>					
+					<li class="<?php if($page == 'blockchain'){echo 'active';}else{ echo 'inactive';} ?>">
+						<a href="index.php?page=blockchain">
+							<i class="fa fa-calculator"></i> 
+							<span class="nav-label">Статистика Blockchain</span>
+						</a>
 					</li>
 					<li class="<?php if($page == 'back'){echo 'active';}else{ echo 'inactive';} ?>">
 						<a href="index.php?page=back">
-							<i class="fa fa-question"></i> 
+							<i class="fa fa-pie-chart"></i> 
 							<span class="nav-label">Обртная связь</span> 
 						</a>
 					</li>

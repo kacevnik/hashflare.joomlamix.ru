@@ -1,5 +1,5 @@
 <?php
-	$pages = array('index', 'settings', 'video', 'back', 'help');
+	$pages = array('index', 'settings', 'video', 'back', 'help', 'blockchain');
 	if($_GET['page']){$page = $_GET['page'];}else{$page = 'index';}
 	if(in_array($page, $pages)){
 		$model_page = 'models/model.'.$page.'.php';
